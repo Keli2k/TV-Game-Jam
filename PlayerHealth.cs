@@ -1,11 +1,13 @@
-﻿
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class PlayerHealth : MonoBehaviour
 {
-   
+    [SerializeField] private Transform player;
+    [SerializeField] private Transform respawnPoint;
+
     public int health = 1;
 
 
@@ -25,8 +27,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
-
-        Destroy(gameObject);
+        player.transform.position = respawnPoint.position;
     }
 }
-
